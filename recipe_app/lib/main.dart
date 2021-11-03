@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'recipe.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -44,19 +46,29 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-// 1
     return Scaffold(
-// 2
       appBar: AppBar(
         title: Text(widget.title),
       ),
-// 3
       body: SafeArea(
-// TODO: Replace child: Container()
-// 4
-        child: Container(),
+        child: ListView.builder(
+          itemBuilder: (BuildContext context, int index) {
+            return buildRecipeCard(Recipe.samples[index]);
+          },
+          itemCount: Recipe.samples.length,
+        ),
       ),
     );
   }
-// TODO: Add buildRecipeCard() here
+
+  Widget buildRecipeCard(Recipe recipe) {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          Image(image: AssetImage(recipe.imageUrl)),
+          Text(recipe.label),
+        ],
+      ),
+    );
+  }
 }
