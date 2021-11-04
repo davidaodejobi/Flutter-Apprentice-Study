@@ -9,23 +9,18 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
-
     final ThemeData theme = ThemeData();
 
     return MaterialApp(
-
       title: 'Recipe Calculator',
-
       theme: theme.copyWith(
         colorScheme: theme.colorScheme.copyWith(
           primary: Colors.grey,
           secondary: Colors.black,
         ),
       ),
-
       home: const MyHomePage(title: 'Recipe Calculator'),
     );
   }
@@ -53,7 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         child: ListView.builder(
           itemBuilder: (BuildContext context, int index) {
-            return buildRecipeCard(Recipe.samples[index]);
+            return GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const Text('Hello');
+                  }));
+                },
+                child: buildRecipeCard(Recipe.samples[index]));
           },
           itemCount: Recipe.samples.length,
         ),
