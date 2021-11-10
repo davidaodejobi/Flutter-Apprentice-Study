@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'card1.dart';
+
 // 1
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,10 +12,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedPage = 0;
 
-  static List<Widget> pages = [
-    Container(
-      color: Colors.teal,
-    ),
+  final List<Widget> _pages = [
+    const Card1(),
     Container(
       color: Colors.lime,
     ),
@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
     ),
   ];
 
-  static List<String> _appbarTitles = ['Tab1', 'Tab2', 'Tab3'];
+  final List<String> _appbarTitles = ['Tab1', 'Tab2', 'Tab3'];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
         ),
       ),
 // TODO: Show selected tab
-      body: pages[_selectedPage],
+      body: _pages[_selectedPage],
 // 4
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onItemTapped,
@@ -49,16 +49,16 @@ class _HomeState extends State<Home> {
         selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
 // TODO: Set selected tab bar
 // 6
-        items: <BottomNavigationBarItem>[
-          const BottomNavigationBarItem(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
             label: 'Card',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
             label: 'Card2',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
             label: 'Card3',
           ),

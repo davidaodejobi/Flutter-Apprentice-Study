@@ -17,7 +17,7 @@ class Fooderlich extends StatelessWidget {
       // TODO: Add theme
       title: 'Fooderlich',
       theme: theme,
-      home: Home(),
+      home: const Home(),
     );
   }
 }
