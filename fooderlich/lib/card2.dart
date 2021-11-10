@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'author_card.dart';
 import 'fooderlich_theme.dart';
 
@@ -10,8 +9,8 @@ class Card2 extends StatelessWidget {
     return Center(
       child: Container(
         constraints: const BoxConstraints.expand(
-          width: 350,
-          height: 450,
+          width: 400,
+          height: 500,
         ),
         decoration: const BoxDecoration(
           image: DecorationImage(

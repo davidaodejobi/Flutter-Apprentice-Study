@@ -17,8 +17,8 @@ class Card1 extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         constraints: const BoxConstraints.expand(
-          width: 350,
-          height: 450,
+          width: 400,
+          height: 500,
         ),
 // Constrain the container’s size to a width of 350 and a height of 450.
         decoration: const BoxDecoration(
