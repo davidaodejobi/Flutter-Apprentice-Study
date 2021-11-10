@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'card1.dart';
 import 'card2.dart';
+import 'card3.dart';
+import 'card1.dart';
 
 // 1
 class Home extends StatefulWidget {
@@ -16,12 +17,10 @@ class _HomeState extends State<Home> {
   final List<Widget> _pages = [
     const Card1(),
     const Card2(),
-    Container(
-      color: Colors.pinkAccent,
-    ),
+    const Card3(),
   ];
 
-  final List<String> _appbarTitles = ['Tab1', 'Tab2', 'Tab3'];
+  final List<String> _appbarTitles = ['Card1', 'Card2', 'Card3'];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -35,19 +34,14 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text(
           _appbarTitles[_selectedPage],
-// 2
           style: Theme.of(context).textTheme.headline6,
         ),
       ),
-// TODO: Show selected tab
       body: _pages[_selectedPage],
-// 4
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onItemTapped,
         currentIndex: _selectedPage,
         selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
-// TODO: Set selected tab bar
-// 6
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
