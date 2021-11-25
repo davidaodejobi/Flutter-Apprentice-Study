@@ -14,13 +14,20 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedPage = 0;
 
-  final List<Widget> _pages = [
-    const Card1(),
-    const Card2(),
-    const Card3(),
+  final List<Map<String, Object>> _pages = [
+    {
+      'page': const Card1(),
+      'appBar': 'Card1',
+    },
+    {
+      'page': const Card2(),
+      'appBar': 'Card2',
+    },
+    {
+      'page': const Card3(),
+      'appBar': 'Card3',
+    }
   ];
-
-  final List<String> _appbarTitles = ['Card1', 'Card2', 'Card3'];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -33,11 +40,11 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          _appbarTitles[_selectedPage],
+          _pages[_selectedPage]['appBar'] as String,
           style: Theme.of(context).textTheme.headline6,
         ),
       ),
-      body: _pages[_selectedPage],
+      body: _pages[_selectedPage]['page'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onItemTapped,
         currentIndex: _selectedPage,
