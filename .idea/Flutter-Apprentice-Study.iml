@@ -9,6 +9,9 @@
       <excludeFolder url="file://$MODULE_DIR$/fooderlich/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/fooderlich/build" />
       <excludeFolder url="file://$MODULE_DIR$/fooderlich/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/advance_fooderlich/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/advance_fooderlich/build" />
+      <excludeFolder url="file://$MODULE_DIR$/advance_fooderlich/.dart_tool" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
