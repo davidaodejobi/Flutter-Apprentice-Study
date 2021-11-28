@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'models/grocery_manager.dart';
 import 'models/models.dart';
 import 'fooderlich_theme.dart';
 import 'home.dart';
@@ -27,7 +28,7 @@ tab index changes and notifies its listeners.
         providers: [
 // 2
           ChangeNotifierProvider(create: (context) => TabManager()),
-// TODO 10: Add GroceryManager Provider
+          ChangeNotifierProvider(create: (context) => GroceryManager()),
         ],
         child: const Home(),
       ),
