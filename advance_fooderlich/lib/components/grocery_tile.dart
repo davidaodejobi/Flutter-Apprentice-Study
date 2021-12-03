@@ -4,13 +4,9 @@ import 'package:intl/intl.dart';
 import '../models/grocery_item.dart';
 
 class GroceryTile extends StatelessWidget {
-// 1
   final GroceryItem item;
-// 2
   final Function(bool?)? onComplete;
-// 3
   final TextDecoration textDecoration;
-// 4
   GroceryTile({
     Key? key,
     required this.item,
@@ -27,16 +23,12 @@ class GroceryTile extends StatelessWidget {
         children: [
           Row(
             children: [
-              // 2
               Container(width: 5.0, color: item.color),
-// 3
               const SizedBox(width: 16.0),
-// 4
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-// 5
                   Text(
                     item.name,
                     style: GoogleFonts.lato(
@@ -52,22 +44,18 @@ class GroceryTile extends StatelessWidget {
               ),
             ],
           ),
-          // 6
           Row(
             children: [
-// 7
               Text(
                 item.quantity.toString(),
                 style: GoogleFonts.lato(
                     decoration: textDecoration, fontSize: 21.0),
               ),
-// 8
               buildCheckbox(),
             ],
           ),
         ],
       ),
-      // color: Colors.red,
     );
   }
 
@@ -108,9 +96,7 @@ class GroceryTile extends StatelessWidget {
 
   Widget buildCheckbox() {
     return Checkbox(
-// 1
       value: item.isComplete,
-// 2
       onChanged: onComplete,
     );
   }
