@@ -26,7 +26,6 @@ tab index changes and notifies its listeners.
       */
       home: MultiProvider(
         providers: [
-// 2
           ChangeNotifierProvider(create: (context) => TabManager()),
           ChangeNotifierProvider(create: (context) => GroceryManager()),
         ],

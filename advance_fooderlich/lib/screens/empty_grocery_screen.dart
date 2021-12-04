@@ -7,8 +7,6 @@ class EmptyGroceryScreen extends StatelessWidget {
   const EmptyGroceryScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-// TODO 3: Replace and add layout widgets
-
     return Padding(
       padding: const EdgeInsets.all(30.0),
       child: Center(
